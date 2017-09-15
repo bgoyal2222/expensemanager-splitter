@@ -20,7 +20,8 @@ import android.widget.TextView;
 
 public class UserExpense extends Activity implements OnClickListener{
 
-	TextView tv1,tv2;
+	
+	EditText fdate,tdate;
 	boolean d1=false,d2=false;
 	Button b1,b2,b3;
 	
@@ -37,8 +38,10 @@ public class UserExpense extends Activity implements OnClickListener{
 		b1=(Button)findViewById(R.id.btnf);
 		b2=(Button)findViewById(R.id.btnt);
 		b3=(Button)findViewById(R.id.get);
-		tv1=(TextView)findViewById(R.id.fdate);
-		tv2=(TextView)findViewById(R.id.tdate);
+		fdate=(EditText)findViewById(R.id.etfd);
+		fdate.setEnabled(false);
+		tdate=(EditText)findViewById(R.id.ettd);
+		tdate.setEnabled(false);
 		b1.setOnClickListener(this);
 		b2.setOnClickListener(this);
 		b3.setOnClickListener(this);
@@ -80,8 +83,8 @@ public class UserExpense extends Activity implements OnClickListener{
 		else if(arg0.getId()==R.id.get)
 		{
 			Intent it=new Intent(getApplicationContext(),ExpenseList.class);
-			it.putExtra("from",tv1.getText().toString());
-			it.putExtra("to",tv2.getText().toString());
+			it.putExtra("from",fdate.getText().toString());
+			it.putExtra("to",tdate.getText().toString());
 			startActivity(it);
 		}
 		
@@ -93,14 +96,14 @@ public class UserExpense extends Activity implements OnClickListener{
 			from=dateAndTime.getTime();
 			String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 			//tv1.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-			tv1.setText(format);
+			fdate.setText(format);
 		}
 		else if(d2==true){
 			Date from=new Date();
 			from=dateAndTime.getTime();
 			String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 			//tv2.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-			tv2.setText(format);
+			tdate.setText(format);
 		}
 		}
 

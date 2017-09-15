@@ -96,7 +96,7 @@ public class ExpenseList extends Activity implements OnClickListener{
 		
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 	    StrictMode.setThreadPolicy(policy);
-	    downl=(Button)findViewById(R.id.button1);
+	    downl=(Button)findViewById(R.id.got2);
 	    downl.setOnClickListener(this);
 	    lst1=(ListView)findViewById(R.id.listView1);
 	  //  getListView().setBackgroundResource(R.drawable.top);

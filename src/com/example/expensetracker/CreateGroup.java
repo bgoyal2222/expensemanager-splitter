@@ -63,8 +63,8 @@ private static String url_all_categories = Connet.url+"creategroup.php";//"http:
 	    
 	    setTitle("Create Group");
 		
-		b1=(Button)findViewById(R.id.button1);
-		ed1=(EditText)findViewById(R.id.editText1);
+		b1=(Button)findViewById(R.id.delete);
+		ed1=(EditText)findViewById(R.id.etdate);
 		b1.setOnClickListener(this);
 		
 	}
@@ -143,7 +143,7 @@ private static String url_all_categories = Connet.url+"creategroup.php";//"http:
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
-			if(arg0.getId()==R.id.button1)
+			if(arg0.getId()==R.id.delete)
 		{
 				new test().execute("");
 			

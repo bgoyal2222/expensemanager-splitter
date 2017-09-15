@@ -42,8 +42,8 @@ import android.widget.AdapterView.OnItemSelectedListener;
 
 public class AddGroupExpense extends Activity implements OnItemSelectedListener,OnClickListener{
 
-	TextView tv1;
-	EditText name,amount;
+	
+	EditText name,amount,date;
 	Button b1,b2;
 	final Calendar dateAndTime=Calendar.getInstance();
 	DateFormat fmtDateAndTime=DateFormat.getDateInstance();
@@ -86,7 +86,8 @@ public class AddGroupExpense extends Activity implements OnItemSelectedListener,
 		
 		b1=(Button)findViewById(R.id.gset);
 		b2=(Button)findViewById(R.id.gadd);
-		tv1=(TextView)findViewById(R.id.gdate);
+		date=(EditText)findViewById(R.id.etgdate);
+		date.setEnabled(false);
 		b1.setOnClickListener(this);
 		b2.setOnClickListener(this);
 		sp1=(Spinner)findViewById(R.id.spinner1);
@@ -262,7 +263,7 @@ public class AddGroupExpense extends Activity implements OnItemSelectedListener,
 			List<NameValuePair> params = new ArrayList<NameValuePair>();
 			params.add(new BasicNameValuePair("name",name.getText().toString()));
 			params.add(new BasicNameValuePair("amount",amount.getText().toString()));
-			params.add(new BasicNameValuePair("date",tv1.getText().toString()));
+			params.add(new BasicNameValuePair("date",date.getText().toString()));
 			params.add(new BasicNameValuePair("category",map.get(TAG_sid).toString()));
 			params.add(new BasicNameValuePair("uid",uid));
 			JSONObject json = jParser.makeHttpRequest(url_all_categories2, "GET", params);
@@ -305,7 +306,7 @@ public class AddGroupExpense extends Activity implements OnItemSelectedListener,
 		from=dateAndTime.getTime();
 		String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 		//tv1.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-		tv1.setText(format);
+		date.setText(format);
 		}
 	private Boolean validation() {
 		Boolean isvalid=false;

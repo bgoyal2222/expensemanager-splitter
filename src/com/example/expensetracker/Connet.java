@@ -6,7 +6,7 @@ import android.view.Menu;
 
 public class Connet extends Activity {
 	
-	public static String url = "http://expensemanager.coolpage.biz/";
+	public static String url = "http://192.168.0.108/";
 	//public static String url = "http://192.168.0.20/";
 	//public static String url = "http://192.168.43.198/";
 

@@ -62,8 +62,8 @@ public class AddExpense extends Activity implements OnItemSelectedListener,OnCli
 	Cursor c1;
 	SQLiteDatabase db;
 
-	TextView tv1;
-	EditText name,amount;
+	
+	EditText name,amount,date;
 	Button b1,b2;
 	final Calendar dateAndTime=Calendar.getInstance();
 	DateFormat fmtDateAndTime=DateFormat.getDateInstance();
@@ -111,7 +111,8 @@ public class AddExpense extends Activity implements OnItemSelectedListener,OnCli
 		
 		b1=(Button)findViewById(R.id.sdate);
 		b2=(Button)findViewById(R.id.add);
-		tv1=(TextView)findViewById(R.id.date);
+		date=(EditText)findViewById(R.id.etdate);
+		date.setEnabled(false);
 		b1.setOnClickListener(this);
 		b2.setOnClickListener(this);
 		sp1=(Spinner)findViewById(R.id.category);
@@ -269,7 +270,6 @@ public class AddExpense extends Activity implements OnItemSelectedListener,OnCli
 			      		        
 //					setListAdapter(adapter);
 						}  });
-			
 		}
 		catch (Exception e)
 	{
@@ -389,7 +389,7 @@ public class AddExpense extends Activity implements OnItemSelectedListener,OnCli
 						List<NameValuePair> params = new ArrayList<NameValuePair>();
 						params.add(new BasicNameValuePair("name",name.getText().toString()));
 						params.add(new BasicNameValuePair("amount",amount.getText().toString()));
-						params.add(new BasicNameValuePair("date",tv1.getText().toString()));
+						params.add(new BasicNameValuePair("date",date.getText().toString()));
 						params.add(new BasicNameValuePair("category",map.get(TAG_sid).toString()));
 						params.add(new BasicNameValuePair("uid",uid));
 						JSONObject json = jParser.makeHttpRequest(url_all_categories2, "GET", params);
@@ -405,7 +405,7 @@ public class AddExpense extends Activity implements OnItemSelectedListener,OnCli
 							ContentValues cv=new ContentValues();
 							cv.put("expense_name", name.getText().toString());
 							cv.put("amount", amount.getText().toString());
-							cv.put("date", tv1.getText().toString());
+							cv.put("date", date.getText().toString());
 							cv.put("user_id", uid);
 							cv.put("category_id",map.get(TAG_sid).toString());
 							cv.put("status","1");
@@ -443,7 +443,7 @@ public class AddExpense extends Activity implements OnItemSelectedListener,OnCli
 		from=dateAndTime.getTime();
 		String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 		//tv1.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-		tv1.setText(format);
+		date.setText(format);
 		}
 	
 	

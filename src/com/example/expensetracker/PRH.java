@@ -30,7 +30,9 @@ public class PRH extends TabActivity implements TabHost.TabContentFactory,androi
 			iview.setLayoutParams(layoutParams);
 			acbar.setCustomView(iview);
 			iview.setOnClickListener(this);
-		TabHost tabHost = getTabHost();
+		
+			
+			TabHost tabHost = getTabHost();
 		  LayoutInflater.from(this).inflate(R.layout.activity_prh,tabHost.getTabContentView(), true);
 		  tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Add Expense").setContent(new Intent(this,   AddGroupExpense.class)));	
 		tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Payable").setContent(new Intent(this,   MyGroupExpenses.class)));

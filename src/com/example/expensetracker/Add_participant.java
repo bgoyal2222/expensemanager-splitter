@@ -82,7 +82,7 @@ public void onCreate(Bundle savedInstanceState) {
 	
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     StrictMode.setThreadPolicy(policy);
-    b2=(Button)findViewById(R.id.button1);
+    b2=(Button)findViewById(R.id.delete);
     
     lst1=(ListView)findViewById(R.id.listView1);
     b2.setOnClickListener(this);
@@ -256,7 +256,7 @@ class InteractiveArrayAdapter extends ArrayAdapter<HashMap<String, String>> impl
 			view = inflator.inflate(R.layout.activity_add_participant, null);
 			final ViewHolder viewHolder = new ViewHolder();
 			viewHolder.name= (CheckBox)view.findViewById(R.id.checkBox1);
-			viewHolder.phone = (TextView) view.findViewById(R.id.textView1);
+			viewHolder.phone = (TextView) view.findViewById(R.id.expname2);
 		
 			//viewHolder.add=(Button)view.findViewById(R.id.button1);
 			 //viewHolder.add.setOnClickListener(new View.OnClickListener() {

@@ -21,6 +21,7 @@ import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
@@ -55,7 +56,7 @@ JSONArray  zone;
 	private String TAG_category="category_name";
 	private String TAG_sum="total";
 		
-String uid;
+String uid,from,to;
 private static final String TAG_SUCCESS = "success";
 ArrayList<HashMap<String, String>>categoryList=new ArrayList<HashMap<String,String>>();
 
@@ -77,6 +78,10 @@ String responseBody;
         SharedPreferences sp = PreferenceManager
 				.getDefaultSharedPreferences(this);
 		uid=sp.getString("usid", null);
+		
+		Intent it=getIntent();
+		from=it.getStringExtra("from");
+		to=it.getStringExtra("to");
 		
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 	    StrictMode.setThreadPolicy(policy);
@@ -235,6 +240,8 @@ xVals.add(nm);
 				
 				List<NameValuePair> params = new ArrayList<NameValuePair>();
 				params.add(new BasicNameValuePair("uid",uid));
+				params.add(new BasicNameValuePair("from",from));
+				params.add(new BasicNameValuePair("to",to));
 	 			JSONObject json = jParser.makeHttpRequest(url_all_categories, "GET", params);
 	 		Log.d("branch ", json.toString());
 	 		//	Log.d("All Products:1 ", "Show1");

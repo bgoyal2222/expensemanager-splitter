@@ -134,13 +134,13 @@ db=openOrCreateDatabase("expense_tracker.db", SQLiteDatabase.CREATE_IF_NECESSARY
 			
 			if(success.equals("1"))
 			{
-				//oast.makeText(getApplicationContext(),"deleted", 10000).show();
+				Toast.makeText(getApplicationContext(),"deleted", 10000).show();
 			}
 						
 			}
 			catch (Exception e)
 			{
-			//	Toast.makeText(getApplicationContext(),e.getMessage()+"error", 10000).show();
+				Toast.makeText(getApplicationContext(),e.getMessage()+"error", 10000).show();
 				
 				Log.d("ërror",e.getMessage());
 //					e.printStackTrace();
@@ -212,7 +212,7 @@ db=openOrCreateDatabase("expense_tracker.db", SQLiteDatabase.CREATE_IF_NECESSARY
 				 return;
 					}
 				else if(pos==3){
-					Intent it=new Intent(getApplicationContext(),PieChartActivity.class);
+					Intent it=new Intent(getApplicationContext(),PieFromTo.class);
 					
 				 startActivity(it);
 				 return;

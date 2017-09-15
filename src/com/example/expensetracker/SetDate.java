@@ -42,10 +42,10 @@ private static String url_all_categories2 = Connet.url+"selectUser.php";
 	
 	JSONparser jParser = new JSONparser();
 
-	TextView tv1,tv2;
+	
 	boolean d1=false,d2=false;
 	Button b1,b2,b3;
-	EditText ed1;
+	EditText ed1,fdate,tdate;
 	final Calendar dateAndTime=Calendar.getInstance();
 	DateFormat fmtDateAndTime=DateFormat.getDateInstance();
 	DatePickerDialog.OnDateSetListener d;
@@ -72,8 +72,10 @@ private static String url_all_categories2 = Connet.url+"selectUser.php";
 		b1=(Button)findViewById(R.id.from);
 		b2=(Button)findViewById(R.id.to);
 		b3=(Button)findViewById(R.id.set);
-		tv1=(TextView)findViewById(R.id.fdate);
-		tv2=(TextView)findViewById(R.id.lfrom);
+		fdate=(EditText)findViewById(R.id.etfdate);
+		fdate.setEnabled(false);
+		tdate=(EditText)findViewById(R.id.ettdate);
+		tdate.setEnabled(false);
 		ed1=(EditText)findViewById(R.id.amount);
 		b1.setOnClickListener(this);
 		b2.setOnClickListener(this);
@@ -86,8 +88,8 @@ private static String url_all_categories2 = Connet.url+"selectUser.php";
 			params.add(new BasicNameValuePair("uid",uid));
 			JSONObject json = jParser.makeHttpRequest(url_all_categories2, "GET", params);
 			ed1.setText(json.getString("limit"));
-			tv1.setText(json.getString("from"));
-			tv2.setText(json.getString("to"));
+			fdate.setText(json.getString("from"));
+			tdate.setText(json.getString("to"));
 			}
 			else
 			{
@@ -138,8 +140,8 @@ d=new DatePickerDialog.OnDateSetListener() {
     			{
     		List<NameValuePair> params = new ArrayList<NameValuePair>();
     		params.add(new BasicNameValuePair("limit",ed1.getText().toString()));
-    		params.add(new BasicNameValuePair("from",tv1.getText().toString()));
-    		params.add(new BasicNameValuePair("to",tv2.getText().toString()));
+    		params.add(new BasicNameValuePair("from",fdate.getText().toString()));
+    		params.add(new BasicNameValuePair("to",tdate.getText().toString()));
     		params.add(new BasicNameValuePair("uid",uid));
     		JSONObject json = jParser.makeHttpRequest(url_all_categories, "GET", params);
     		 success=json.getString("success");
@@ -218,14 +220,14 @@ d=new DatePickerDialog.OnDateSetListener() {
 			from=dateAndTime.getTime();
 			String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 			//tv1.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-			tv1.setText(format);
+			fdate.setText(format);
 		}
 		else if(d2==true){
 			Date from=new Date();
 			from=dateAndTime.getTime();
 			String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 			//tv2.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-			tv2.setText(format);
+			tdate.setText(format);
 		}
 		}
 	

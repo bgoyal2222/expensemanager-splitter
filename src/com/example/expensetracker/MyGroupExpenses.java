@@ -180,6 +180,7 @@ protected void onPostExecute(String file_url)
 			 * */
 			ListAdapter adapter = new InteractiveArrayAdapter(MyGroupExpenses.this, categoryList);
 			
+			
 			// updating listview
 					
 				lst1.setAdapter(adapter);

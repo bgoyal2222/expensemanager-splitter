@@ -41,8 +41,7 @@ import android.widget.Toast;
 
 public class CategoryLimit extends Activity implements OnItemSelectedListener,OnClickListener{
 
-	EditText amt;
-	TextView from2,to;
+	EditText amt,fromd,tod;
 	Button fdate,tdate,save;
 	Spinner s;
 	boolean d1=false,d2=false;
@@ -81,12 +80,14 @@ public class CategoryLimit extends Activity implements OnItemSelectedListener,On
 				.getDefaultSharedPreferences(this);
 		uid=sp.getString("usid", null);
 		
+		fromd=(EditText)findViewById(R.id.etfrom);
+		fromd.setEnabled(false);
+		tod=(EditText)findViewById(R.id.etto);
+		tod.setEnabled(false);
 		amt=(EditText)findViewById(R.id.camt);
 		fdate=(Button)findViewById(R.id.bfrom);
 		tdate=(Button)findViewById(R.id.bto);
 		save=(Button)findViewById(R.id.bsave);
-		from2=(TextView)findViewById(R.id.lfrom);
-		to=(TextView)findViewById(R.id.lto);
 		fdate.setOnClickListener(this);
 		tdate.setOnClickListener(this);
 		save.setOnClickListener(this);
@@ -258,9 +259,9 @@ public class CategoryLimit extends Activity implements OnItemSelectedListener,On
 		//	Toast.makeText(getApplicationContext(),map.get(TAG_sid), 10000).show();
 				
 				List<NameValuePair> params = new ArrayList<NameValuePair>();
-				params.add(new BasicNameValuePair("from",from2.getText().toString()));
+				params.add(new BasicNameValuePair("from",fromd.getText().toString()));
 				params.add(new BasicNameValuePair("amount",amt.getText().toString()));
-				params.add(new BasicNameValuePair("to",to.getText().toString()));
+				params.add(new BasicNameValuePair("to",tod.getText().toString()));
 				params.add(new BasicNameValuePair("category",map.get(TAG_sid).toString()));
 				params.add(new BasicNameValuePair("uid",uid));
 				JSONObject json = jParser.makeHttpRequest(url_all_categories2, "GET", params);
@@ -306,14 +307,14 @@ public class CategoryLimit extends Activity implements OnItemSelectedListener,On
 			from=dateAndTime.getTime();
 			String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 			//tv1.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-			from2.setText(format);
+			fromd.setText(format);
 		}
 		else if(d2==true){
 			Date from=new Date();
 			from=dateAndTime.getTime();
 			String format=new SimpleDateFormat("yyyy-MM-dd").format(from);
 			//tv2.setText(fmtDateAndTime.format(dateAndTime.getTime()));
-			to.setText(format);
+			tod.setText(format);
 		}
 		}
 	
