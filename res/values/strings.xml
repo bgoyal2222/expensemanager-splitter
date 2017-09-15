@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">expense tracker</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_connet">Connet</string>
+    <string name="title_activity_jsonparser">JSONparser</string>
+    <string name="title_activity_zone">Zone</string>
+    <string name="title_activity_add_expense">AddExpense</string>
+    <string name="title_activity_fetch_data">FetchData</string>
+    <string name="title_activity_schedule">Schedule</string>
+    <string name="title_activity_login">Login</string>
+    <string name="pass">Password</string>
+    <string name="email">Email</string>
+    <string name="remember">Remember me</string>
+    <string name="regis">Register</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_add_participant">Add_participant</string>
+    <string name="add">Add</string>
+    <string name="title_activity_set_date">SetDate</string>
+    <string name="title_activity_change_password">ChangePassword</string>
+    <string name="title_activity_groups">Groups</string>
+    <string name="title_activity_category_limit">Categorywise Limit</string>
+    <string name="title_activity_user_expense">User Expense</string>
+    <string name="title_activity_expense_list">Expense List</string>
+    <string name="title_activity_bar_chart">BarChart</string>
+    <string name="title_activity_create_group">CreateGroup</string>
+	<string name="title_activity_group_members">GroupMembers</string>
+    <string name="title_activity_my_group_expenses">MyGroupExpenses</string>
+    <string name="title_activity_sample1">Sample1</string>
+    <string name="title_activity_set_limit">SetLimit</string>
+    <string name="title_activity_receivable">Receivable</string>
+     <string name="title_activity_add_group_expense">AddGroupExpense</string>
+   <string name="title_activity_history">History</string>
+    <string name="title_activity_prh">PRH</string>
+    <string name="title_activity_set_limit2">SetLimit2</string>
+
+     
+    
+</resources>

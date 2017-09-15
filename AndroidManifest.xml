@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.expensetracker"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+         android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.expensetracker.Registration"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.expensetracker.PieChartActivity" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Connet"
+            android:label="@string/title_activity_connet" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.JSONparser"
+            android:label="@string/title_activity_jsonparser" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Zone"
+            android:label="@string/title_activity_zone" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.AddExpense"
+            android:label="@string/title_activity_add_expense" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.FetchData"
+            android:label="@string/title_activity_fetch_data" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Schedule"
+            android:label="@string/title_activity_schedule" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Login"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Home"
+            android:label="@string/title_activity_home" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Add_participant"
+            android:label="@string/title_activity_add_participant" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.SetDate"
+            android:label="@string/title_activity_set_date" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.ChangePassword"
+            android:label="@string/title_activity_change_password" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Groups"
+            android:label="@string/title_activity_groups" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.CategoryLimit"
+            android:label="@string/title_activity_category_limit" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.UserExpense"
+            android:label="@string/title_activity_user_expense" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.ExpenseList"
+            android:label="@string/title_activity_expense_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.BarChartActivity"
+            android:label="@string/title_activity_bar_chart" >
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.CreateGroup"
+            android:label="@string/title_activity_create_group" >
+        </activity>
+                <activity
+            android:name="com.example.expensetracker.AddGroupExpense"
+            android:label="@string/title_activity_add_group_expense" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+                <activity
+            android:name="com.example.expensetracker.GroupMembers"
+            android:label="@string/title_activity_group_members" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.MyGroupExpenses"
+            android:label="@string/title_activity_my_group_expenses" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Sample1"
+            android:label="@string/title_activity_sample1" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.SetLimit"
+            android:label="@string/title_activity_set_limit" >
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.Receivable"
+            android:label="@string/title_activity_receivable" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+                <activity
+            android:name="com.example.expensetracker.History"
+            android:label="@string/title_activity_history" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.PRH"
+            android:label="@string/title_activity_prh" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.expensetracker.SetLimit2"
+            android:label="@string/title_activity_set_limit2" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        
+    </application>
+
+</manifest>
